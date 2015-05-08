@@ -34,4 +34,12 @@ describe(Client) do
     end
   end
 
+  describe('.find') do
+    it("returns a client using client's id") do
+      test_client = Client.new({:name => "Sassy Guy", :id => nil, :type_of_cut => "Buzz Cut", :stylist_id => 2})
+      test_client.save()
+      expect(Client.find(test_client.id)).to(eq(test_client))
+    end
+  end
+
 end
