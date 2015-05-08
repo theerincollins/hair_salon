@@ -27,16 +27,14 @@ label {
 
 ul {
   list-style: none;
-  color: teal;
+  color: #7aba7a;
   font-size: 18px;
-  text-align: center;
   margin-left: 0px;
   padding-left: 0px;
 }
 
 li {
   list-style: none;
-  text-align: center;
   margin-left: 0px;
 }
 
@@ -50,4 +48,14 @@ li {
 
 .form-control {
   width: 400px;
+}
+
+.hire-text {
+  color: red;
+  padding-left: 10px;
+}
+
+.label-text {
+  color: purple;
+  font-size: 18px;
 }

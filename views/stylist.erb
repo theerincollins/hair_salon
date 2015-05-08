@@ -1,11 +1,11 @@
 <h1 class="main-header-little">Here's the Scoop on <%= @stylist.name() %></h1>
 
-  <p>Name: <%= @stylist.name() %></p>
+  <p><span class="label-text">Name:</span> <%= @stylist.name() %></p>
   <% if @stylist.clients.any?() %>
-    <p>Clients</p>
+    <p style="padding-bottom: 0px; margin-bottom: 0px;"><span class="label-text">Clients:</span></p>
     <% @stylist.clients().each do |client| %>
     <ul>
-      <li><%= client.name() %></li>
+      <li style="padding-left: 10px;"><%= client.name() %></li>
     </ul>
     <% end %>
   <% else %>
@@ -19,7 +19,7 @@
   </form>
 
   <p><a href="/" class="btn btn-primary" role="button">Return Home</a></p>
-
+<br>
     <h3>Edit Details for <%= @stylist.name() %></h3>
 
     <form action="/stylists/<%=@stylist.id()%>" method="post">

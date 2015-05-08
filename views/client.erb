@@ -1,8 +1,8 @@
-<h1 class="main-header-little">Client: <%= @client.name() %><h1>
+<h1 class="main-header-little">Client: <span style="font-size:35px"><%= @client.name() %></span><h1>
 
-  <p>Name: <%= @client.name() %></p>
-  <p>Type of Cut: <%= @client.type_of_cut %></p>
-  <p>Stylist: <%= @stylist_name %></p>
+  <p><span class="label-text">Name:</span> <%= @client.name() %></p>
+  <p><span class="label-text">Type of Cut:</span> <%= @client.type_of_cut %></p>
+  <p><span class="label-text">Stylist:</span> <%= @stylist_name %></p>
 
 <p><a href="/" class="btn btn-primary" role="button">Return Home</a></p>
 
@@ -11,7 +11,7 @@
     <input name = "id" type="hidden" value="<%=@client.id %>">
     <button type="submit" class="btn btn-danger">Delete Client</button>
   </form>
-
+<br>
   <h3>Edit Details for <%= @client.name() %></h3>
 
   <form action="/clients/<%=@client.id()%>" method="post">

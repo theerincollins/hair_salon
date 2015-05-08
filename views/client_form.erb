@@ -9,11 +9,15 @@
 
   <div class="form-group">
   <label for="stylist">Select a Stylist</label>
+  <% if @stylists.any?() %>
     <select id='stylist' name='stylist' type='text'>
       <% @stylists.each() do |stylist| %>
         <option value="<%= stylist.id()%>"> <%= stylist.name() %> </option>
-      <% end %>
+        <% end %>
     </select>
+    <% else %>
+      <p class="hire-text"-text">BoBo Nay-Nay, You Need to Hire A Stylists First!</p>
+    <% end %>
   </div>
 
   <div class="form-group">
