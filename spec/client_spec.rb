@@ -42,4 +42,21 @@ describe(Client) do
     end
   end
 
+  describe('#delete') do
+    it("deletes a client from the database") do
+      test_client = Client.new({:name => "Sassy Guy", :id => nil, :type_of_cut => "Buzz Cut", :stylist_id => 2})
+      test_client.save()
+      test_client.delete()
+      expect(Client.all()).to(eq([]))
+    end
+  end
+
+  describe('#update') do
+    it("updates a client in the database") do
+      test_client = Client.new({:name => "Sassy Guy", :id => nil, :type_of_cut => "Buzz Cut", :stylist_id => 2})
+      test_client.save()
+      test_client.update({:name => "Crazy Pete", :type_of_cut => "Long Cut", :id => nil, :stylist_id => 2})
+    end
+  end
+
 end

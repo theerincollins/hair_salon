@@ -38,4 +38,30 @@ class Client
     self.name == other_client.name() && self.type_of_cut() == other_client.type_of_cut() && self.stylist_id() == other_client.stylist_id()
   end
 
+  define_method(:delete) do
+    DB.exec("DELETE FROM clients WHERE id = #{self.id()};")
+  end
+
+  define_method(:update) do |attributes|
+    if attributes.fetch(:name) == ""
+      @name = @name
+    else
+      @name = attributes.fetch(:name)
+    end
+
+    attributes.fetch(:stylist_id, @stylist_id)
+
+    if attributes.fetch(:type_of_cut) == ""
+      @type_of_cut = @type_of_cut
+    else
+      @type_of_cut = attributes.fetch(:type_of_cut)
+    end
+
+    @id = self.id()
+
+    DB.exec("UPDATE clients SET name = '#{@name}' WHERE id = #{@id};")
+    DB.exec("UPDATE clients SET type_of_cut = '#{@type_of_cut}' WHERE id = #{@id};")
+    DB.exec("UPDATE clients SET stylist_id = #{@stylist_id} WHERE id = #{@id};")
+  end
+
 end
