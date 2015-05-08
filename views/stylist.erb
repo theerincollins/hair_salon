@@ -1,0 +1,13 @@
+<h1 class="main-header">Here's the Scoop on <%= @stylist.name() %><h1>
+
+  <p>Name: <%= @stylist.name() %></p>
+  <% if @stylist.clients.any?() %>
+    <p>Clients</p>
+    <% @stylist.clients().each do |client| %>
+    <ul>
+      <li><%= client.name() %></li>
+    </ul>
+    <% end %>
+  <% else %>
+  <%= @stylist.name() %> Needs Some Clients
+  <% end %>

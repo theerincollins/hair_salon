@@ -1,0 +1,15 @@
+<h2 class="main-header-little">Welcome to the Owner Portal</h2>
+
+<h3>All Stylists</h3>
+
+<% if @stylists.any?() %>
+<ul>
+  <% @stylists.each do |stylist| %>
+  <li><a href='/stylists/<%=stylist.id() %>'><%= stylist.name() %></li></a>
+  <% end %>
+</ul>
+<% else %>
+  <p>Time to Hire Some Stylists</p>
+<% end %>
+
+<a href="/stylists/new" role = "button" class="btn btn-warning">Add a Stylist</a>
