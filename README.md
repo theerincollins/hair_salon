@@ -9,9 +9,9 @@ of stylists and clients at the salon. Each stylist has a name, and each client
 has the type of cut they would like, a name, and a stylist.
 
 ##User Stories Completed
-As an salon owner, I want to view, add, update and delete stylists.
-As a salon owner, I want to view, add, update and delete clients.
-As a salon owner, I want to add clients to a stylist.
+* As an salon owner, I want to view, add, update and delete stylists.
+* As a salon owner, I want to view, add, update and delete clients.
+* As a salon owner, I want to add clients to a stylist.
 
 ##Databases
 * Production database: hair_salon
@@ -19,11 +19,13 @@ As a salon owner, I want to add clients to a stylist.
 * The following tables were used in each database.
 
 Table: stylists
+
 id | name
 ___ | ___  
 serial | varchar
 
 Table: clients
+
 id | name | type_of_cut | stylist_id
 ___ | ___ | ___ | ___
 serial | varchar | varchar | int
