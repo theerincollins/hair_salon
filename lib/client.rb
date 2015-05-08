@@ -49,7 +49,11 @@ class Client
       @name = attributes.fetch(:name)
     end
 
-    attributes.fetch(:stylist_id, @stylist_id)
+    if attributes.fetch(:stylist_id) == @stylist_id
+      @stylist_id = @stylist_id
+    else
+      @stylist_id = attributes.fetch(:stylist_id)
+    end
 
     if attributes.fetch(:type_of_cut) == ""
       @type_of_cut = @type_of_cut

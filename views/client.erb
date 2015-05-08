@@ -1,0 +1,43 @@
+<h1 class="main-header-little">Client: <%= @client.name() %><h1>
+
+  <p>Name: <%= @client.name() %></p>
+  <p>Type of Cut: <%= @client.type_of_cut %></p>
+  <p>Stylist: <%= @stylist_name %></p>
+
+<p><a href="/" class="btn btn-primary" role="button">Return Home</a></p>
+
+  <form action="/client" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <input name = "id" type="hidden" value="<%=@client.id %>">
+    <button type="submit" class="btn btn-danger">Delete Client</button>
+  </form>
+
+  <h3>Edit Details for <%= @client.name() %></h3>
+
+  <form action="/clients/<%=@client.id()%>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    <input name="id" id="id" type="hidden" value="<%=@client.id()%>">
+
+    <div class="form-group">
+      <label for="name">Edit Name</label>
+      <input type="text" name="name" id="name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="type_of_cut">Change Type of Cut</label>
+      <input type="text" name="type_of_cut" id="type_of_cut" class="form-control"
+      placeholder="<%=@client.type_of_cut()%>">
+    </div>
+
+    <div class="form-group">
+    <label for="stylist">Change Stylist</label>
+      <select id='stylist' name='stylist' type='text'>
+        <% @stylists.each() do |stylist| %>
+          <option value="<%= stylist.id()%>"> <%= stylist.name() %> </option>
+        <% end %>
+      </select>
+    </div>
+
+    <p><button type="submit" class="btn btn-success">Update</button></p>
+
+  </form>

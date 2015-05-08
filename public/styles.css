@@ -7,3 +7,27 @@
   color: #cf36ff;
   font-size: 40px;
 }
+
+p {
+  font-size: 15px;
+}
+
+label {
+  font-size: 20px;
+  color: orange;
+}
+
+.owner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  color: teal;
+  font-size: 18px;
+  text-align: center;
+}

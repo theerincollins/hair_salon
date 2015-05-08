@@ -1,15 +1,34 @@
-<h2 class="main-header-little">Welcome to the Owner Portal</h2>
+<h2 class="main-header-little text-center">Welcome to the Owner Portal</h2>
+<div class="row">
+  <div class="col-sm-6 text-center">
+    <h3>All Stylists</h3>
 
-<h3>All Stylists</h3>
+    <% if @stylists.any?() %>
+    <ul>
+      <% @stylists.each do |stylist| %>
+      <li><a href='/stylists/<%=stylist.id() %>'><%= stylist.name() %></li></a>
+      <% end %>
+    </ul>
+    <% else %>
+      <p>Time to Hire Some Stylists</p>
+    <% end %>
 
-<% if @stylists.any?() %>
-<ul>
-  <% @stylists.each do |stylist| %>
-  <li><a href='/stylists/<%=stylist.id() %>'><%= stylist.name() %></li></a>
-  <% end %>
-</ul>
-<% else %>
-  <p>Time to Hire Some Stylists</p>
-<% end %>
 
-<a href="/stylists/new" role = "button" class="btn btn-warning">Add a Stylist</a>
+    <a href="/stylists/new" role = "button" class="btn btn-warning">Add a Stylist</a>
+  </div>
+  <div class="col-sm-6 text-center">
+    <h3>All Clients</h3>
+
+    <% if @clients.any?() %>
+    <ul>
+      <% @clients.each do |client| %>
+      <li><a href='/clients/<%=client.id() %>'><%= client.name() %></li></a>
+      <% end %>
+    </ul>
+    <% else %>
+      <p>You Should Look into Marketing</p>
+    <% end %>
+
+    <a href="/clients/new" role = "button" class="btn btn-warning">Add a Client</a>
+  </div>
+</div>

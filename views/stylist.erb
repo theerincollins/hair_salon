@@ -1,4 +1,4 @@
-<h1 class="main-header">Here's the Scoop on <%= @stylist.name() %><h1>
+<h1 class="main-header-little">Here's the Scoop on <%= @stylist.name() %></h1>
 
   <p>Name: <%= @stylist.name() %></p>
   <% if @stylist.clients.any?() %>
@@ -9,5 +9,27 @@
     </ul>
     <% end %>
   <% else %>
-  <%= @stylist.name() %> Needs Some Clients
+  <p><%= @stylist.name() %> Needs Some Clients</p>
   <% end %>
+
+  <form action="/stylist" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <input name = "id" type="hidden" value="<%=@stylist.id %>">
+    <p><button type="submit" class="btn btn-danger">Delete Stylist</button></p>
+  </form>
+
+  <p><a href="/" class="btn btn-primary" role="button">Return Home</a></p>
+
+    <h3>Edit Details for <%= @stylist.name() %></h3>
+
+    <form action="/stylists/<%=@stylist.id()%>" method="post">
+      <input name="_method" type="hidden" value="patch">
+      <input name="id" id="id" type="hidden" value="<%=@stylist.id()%>">
+
+      <div class="form-group">
+        <label for="name">Edit Name</label>
+        <input type="text" name="name" id="name" class="form-control">
+      </div>
+
+      <p><button type="submit" class="btn btn-success">Update</button></p>
+    </form>
