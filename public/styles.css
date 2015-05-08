@@ -26,8 +26,28 @@ label {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   color: teal;
   font-size: 18px;
   text-align: center;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.home {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.form-control {
+  width: 400px;
 }
