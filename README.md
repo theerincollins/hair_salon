@@ -19,17 +19,18 @@ has the type of cut they would like, a name, and a stylist.
 * The following tables were used in each database.
 
 Table: stylists
-
+<div>
 id | name
 ___ | ___  
 serial | varchar
+</div>
 
 Table: clients
-
+<div>
 id | name | type_of_cut | stylist_id
 ___ | ___ | ___ | ___
 serial | varchar | varchar | int
-
+</div>
 ##Setup Instructions  
 * Download all files
 * Create the Databases described above
